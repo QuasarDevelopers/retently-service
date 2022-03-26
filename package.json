@@ -15,6 +15,7 @@
     "express": "^4.17.3",
     "filenamify-url": "^3.0.0",
     "jsonwebtoken": "^8.5.1",
-    "pageres": "^6.3.1"
+    "pageres": "^6.3.1",
+    "postman": "^0.2.0"
   }
 }
