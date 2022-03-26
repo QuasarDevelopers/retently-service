@@ -21,7 +21,7 @@ app.post('/api/auth' ,(req,res) => {
 
 app.post('/api/snap' , (req,res,next) => {
     const token = req.headers['authorization'];
-    console.log(req.headers);
+
     if (token == null) return res.sendStatus(401)
     jwt.verify(token, process.env.SECRET, async (err, user) => {
         if (err) return res.sendStatus(403)
