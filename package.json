@@ -1,0 +1,20 @@
+{
+  "name": "retently",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dns": "^0.2.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "filenamify-url": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "pageres": "^6.3.1"
+  }
+}
