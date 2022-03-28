@@ -29,7 +29,7 @@ app.post('/api/snap' , (req,res,next) => {
 
         if (!(await check(req.body.url))) return res.send({error: errors.not_available})
 
-        let filename = '';// await snapshot(req.body);
+        let filename = await snapshot(req.body);
 
         res.send({
             thumbnail: config.host + ':' + config.port + '/images/' + filename + '.png',
