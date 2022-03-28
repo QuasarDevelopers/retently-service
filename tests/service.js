@@ -1,12 +1,29 @@
-const postman = require('postman');
+/**
+ * Postman Test specification
+ *
+ * Create POST http://tanvltech.top:4500/api/snap
+ * Body:
+ * {  "url": "https://github.com/", "token": "test" }
+ *
+ * And paste pre-request script:
+ */
 
-const pm = new postman();
+const options = {
+    url:  'http://tanvltech.top:4500/api/auth',
+    method: 'POST',
+    header: {
+        'Accept': '*/*',
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        "username": "user1",
+        "password": "qwerty"
+    })
+};
 
-pm.test("Test name", function () {
-    const resp = pm.response.json();
-    pm.expect(resp.results.every((res) => {
-        return res.uuid != undefined;
-    })).to.be.true;
 
-
+pm.sendRequest(options, function (err, res) {
+    let json = res.json();
+    console.log(json);
+    pm.request.headers.add({key: 'Authorization', value: json.token});
 });
